@@ -1,0 +1,31 @@
+{
+  "name": "chapter02-shader-overall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.10",
+    "@types/p5": "^1.7.6",
+    "@types/three": "^0.151.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "less": "^4.1.3",
+    "prettier": "^2.8.8",
+    "rollup-plugin-glslify": "^1.3.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.4"
+  },
+  "dependencies": {
+    "@ylbupt/p5-project": "^0.0.2",
+    "@ylbupt/three-game-engine": "^0.0.3",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.11.5",
+    "lodash-es": "^4.17.21",
+    "three": "^0.152.2"
+  }
+}
