@@ -1,0 +1,1 @@
+<a href="./src/glsl-tools/">glsl-tools</a> 中封装了一些方法，其中光照相关的在 <a href="./src/shaders/05-照明/">05-照明</a> 和 <a href="./src/shaders/06-照明贴图相关/">06-照明贴图相关</a>
