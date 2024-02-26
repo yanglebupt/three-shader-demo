@@ -1,1 +1,1 @@
-<a href="./src/glsl-tools/">glsl-tools</a> 中封装了一些方法，其中光照相关的在 <a href="./src/shaders/05-照明/">05-照明</a> 和 <a href="./src/shaders/06-照明贴图相关/">06-照明贴图相关</a>
+<a href="./src/glsl-tools/">glsl-tools</a> 中封装了一些方法，其中光照相关的在 <a href="./src/shaders/05-照明/">05-照明</a> 和 <a href="./src/shaders/06-照明贴图相关/">06-照明贴图相关</a>，这里使用到的框架是基于 `threejs` 再封装的 <a href="https://www.npmjs.com/package/@ylbupt/three-game-engine">@ylbupt/three-game-engine</a>
