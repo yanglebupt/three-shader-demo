@@ -8,5 +8,6 @@ export default defineConfig({
     https: true
   },
   assetsInclude: ['**/*.hdr', '**/*.glb'],
-  plugins: [basicSsl(), glslify()]
+  plugins: [basicSsl(), glslify()],
+  base: './'
 })
