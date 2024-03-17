@@ -8,6 +8,7 @@ import {
   TextureLoader,
   Wrapping
 } from 'three'
+import { Route } from './router'
 
 interface TextureOptions {
   image?: TexImageSource | OffscreenCanvas
@@ -24,7 +25,7 @@ interface TextureOptions {
 }
 
 const texLoader = new TextureLoader()
-const loadTexture = (filename: string, options: TextureOptions = {}) => {
+export const loadTexture = (filename: string, options: TextureOptions = {}) => {
   const tex = texLoader.load(filename)
   Object.keys(options).forEach((k) => {
     Reflect.set(tex, k, options[k as keyof TextureOptions])
@@ -35,4 +36,29 @@ const loadTexture = (filename: string, options: TextureOptions = {}) => {
   return tex
 }
 
-export { loadTexture }
+function createAppByHash(routes: Route[]) {
+  const func = routes.find((r) => r.path == location.hash)
+  if (!func) return
+  window.app?.destroy()
+  window.app = func.app()
+}
+
+export function useRoutes(routes: Route[], id = 'nav') {
+  window.onload = () => {
+    if (location.hash) createAppByHash(routes)
+    else location.hash = '#light'
+  }
+  window.addEventListener('hashchange', () => createAppByHash(routes))
+  let nav = document.getElementById(id)
+  if (nav == null) {
+    nav = document.createElement('nav')
+    nav.id = id
+    document.body.appendChild(nav)
+  }
+  routes.forEach((route) => {
+    const a = document.createElement('a')
+    a.href = route.path
+    a.innerText = route.name
+    nav!.appendChild(a)
+  })
+}
