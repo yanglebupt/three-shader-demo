@@ -5,7 +5,7 @@
 import { App as LightApp } from './shaders/05-照明/app'
 import { App as LightMapApp } from './shaders/06-照明贴图相关/app'
 import bgFilename from './shaders/06-照明贴图相关/hdr/copy.hdr'
-// import { App } from './shaders/07-水面波纹/app'
+import { App as WaterApp } from './shaders/07-水面波纹/app'
 
 export interface Route {
   path: string
@@ -30,6 +30,14 @@ export const routes: Route[] = [
         orbitControl: true,
         background: true,
         bgPath: bgFilename
+      })
+  },
+  {
+    path: '#water',
+    name: 'Water 波纹',
+    app: () =>
+      new WaterApp({
+        orbitControl: true
       })
   }
 ]
